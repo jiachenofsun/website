@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {AppContainer, theme} from './theme'
+import {ThemeProvider} from '@mui/material/styles'
+import {RouterProvider, createBrowserRouter} from 'react-router-dom'
+import {ErrorPage} from './pages'
+import {Root} from './Root'
+import {pageRoutes} from './page-routes'
+
+ const routes = createBrowserRouter([
+  {
+    path: '/',
+    element: <Root />,
+    errorElement: <ErrorPage />,
+    children: pageRoutes.map((pageRoute) => {
+      return {
+        path: pageRoute.path,
+        element: <pageRoute.element />,
+      }
+    }),
+  },
+])
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    <ThemeProvider theme={theme}>
+    <AppContainer>
+    <RouterProvider router={routes} />
+    </AppContainer>
+    </ThemeProvider>
+  )
 }
 
-export default App;
+export default App
