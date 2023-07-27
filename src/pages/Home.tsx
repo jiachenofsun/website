@@ -22,6 +22,7 @@ export const Home = (): JSX.Element => {
 
   const FadeInBox = motion(Box)
 
+  //TODO: MAKE RESPONSIVE
   return (
     <Container 
     sx={{
@@ -35,7 +36,7 @@ export const Home = (): JSX.Element => {
         left: 0,
         width: '100%',
         height: '100%',
-        backgroundImage: `url("/media/welcome-banner.jpg")`,
+        backgroundImage: `url("${process.env.PUBLIC_URL}/media/welcome-banner.jpg")`,
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',

@@ -8,9 +8,9 @@ export interface PageRoute {
 }
 
 export const pageRoutes: PageRoute[] = [
-  {title: 'Home', path: '/', element: Home},
-  {title: 'Photos', path: '/photos', element: Photos},
-  {title: 'Doodles', path: '/doodles', element: Doodles},
-  {title: 'Techy Stuff', path: '/techy-stuff', element: TechyStuff},
-  {title: 'About', path: '/about', element: About},
+  {title: 'HOME', path: '/', element: Home},
+  {title: 'PHOTOS', path: '/photos', element: Photos},
+  {title: 'DOODLES', path: '/doodles', element: Doodles},
+  {title: 'TECHY STUFF', path: '/techy-stuff', element: TechyStuff},
+  {title: 'ABOUT', path: '/about', element: About},
 ]

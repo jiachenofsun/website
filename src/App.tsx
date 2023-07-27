@@ -19,7 +19,9 @@ import {Footer} from './organisms/Footer'
       }
     }),
   },
-])
+],  {
+  basename: process.env.PUBLIC_URL,
+})
 
 
 function App() {

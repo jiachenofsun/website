@@ -1,12 +1,13 @@
 import * as React from 'react'
-import {Box, Toolbar, IconButton, Typography, Menu, MenuItem, Container, Link} from '@mui/material'
+import {Box, Toolbar, IconButton, Typography, Menu, MenuItem, Container} from '@mui/material'
 import {Menu as MenuIcon} from '@mui/icons-material'
 import {StyledAppBar, ShakyButton} from '../theme'
 import {pageRoutes} from '../page-routes'
 import {useNavigate} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 const pageRoutesFiltered = pageRoutes.filter((pageRoute) => {
-  return pageRoute.title !== 'Home'
+  return pageRoute.title !== 'HOME'
 })
 
 export const NavMenu = (): JSX.Element => {
@@ -29,7 +30,7 @@ export const NavMenu = (): JSX.Element => {
             variant="h6"
             noWrap
             component={Link}
-            href="/"
+            to=""
             sx={{
               display: { xs: 'none', md: 'inline' },
               position: 'absolute',
@@ -73,7 +74,12 @@ export const NavMenu = (): JSX.Element => {
             >
               {pageRoutesFiltered.map((pageRoute) => (
                 <MenuItem key={pageRoute.title} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" component="a" href={pageRoute.path}>{pageRoute.title}</Typography>
+                  <Typography 
+                    textAlign="center" 
+                    component={Link} 
+                    to={pageRoute.path}
+                    sx={{textDecoration: 'none'}}
+                    >{pageRoute.title}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -84,7 +90,7 @@ export const NavMenu = (): JSX.Element => {
             variant="h5"
             noWrap
             component={Link}
-            href="/"
+            to=""
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
