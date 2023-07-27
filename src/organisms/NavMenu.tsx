@@ -23,9 +23,10 @@ export const NavMenu = (): JSX.Element => {
   }
 
   return (
-    <StyledAppBar position="fixed" elevation={0}>
+    <StyledAppBar position="sticky" elevation={0}>
       <Container>
         <Toolbar disableGutters>
+          {/* LARGER SCREEN SIZES */}
           <Typography
             variant="h6"
             noWrap
@@ -43,7 +44,9 @@ export const NavMenu = (): JSX.Element => {
           >
             jc's corner
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+
+          {/* SMALLER SCREEN SIZES */}
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, position: 'absolute'}}>
             <IconButton
                 size="large"
                 aria-label="navmenu"
@@ -85,15 +88,15 @@ export const NavMenu = (): JSX.Element => {
             </Menu>
           </Box>
 
-
+          {/* SMALLER SCREEN SIZES */}
           <Typography
             variant="h5"
             noWrap
             component={Link}
             to=""
             sx={{
-              mr: 2,
               display: { xs: 'flex', md: 'none' },
+              justifyContent: 'center',
               flexGrow: 1,
               fontFamily: 'monospace',
               fontWeight: 100,
@@ -105,6 +108,7 @@ export const NavMenu = (): JSX.Element => {
             jc's corner
           </Typography>
           
+          {/* LARGER SCREEN SIZES */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center'}}>
             {pageRoutesFiltered.map((pageRoute) => (
               <ShakyButton

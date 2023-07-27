@@ -28,7 +28,9 @@ export const Home = (): JSX.Element => {
     sx={{
       position: 'relative',
       display: 'flex',
+      flexDirection: { xs: 'column', md: 'row' },
       alignItems: 'center',
+      minHeight: '96vh',
       '&::before': {
         content: '""',
         position: 'absolute',
@@ -48,31 +50,41 @@ export const Home = (): JSX.Element => {
       },
     }}>
       <Box>
-      {Array.from({ length: 8 }).map((_, i) => (
-        <motion.div
-          key={i}
-          variants={variants}
-          initial="hidden"
-          animate="show"
-          custom={i}
-        >
-          <Typography variant="h1">Welcome</Typography>
-        </motion.div>
-      ))}
+        {Array.from({ length: 8 }).map((_, i) => (
+          <motion.div
+            key={i}
+            variants={variants}
+            initial="hidden"
+            animate="show"
+            custom={i}
+          >
+            <Typography variant="h1">Welcome</Typography>
+          </motion.div>
+        ))}
       </Box>
+
       <FadeInBox 
         initial={{ opacity: 0, x: '-3%' }} 
         animate={{ opacity: 1, x: '0%' }} 
         transition={{ delay: 2.5, duration: 2 }}
-        sx={{maxWidth: '800px', marginLeft: '200px'}}>
-        <Typography variant="h4">This is a space where I'd like to share some cool/pretty things I made with you! <br/>
+        sx={{maxWidth: '800px', marginLeft: {xs: '0px', md: '200px'}}}>
+        <Typography variant="h4" sx={{textAlign: {xs: 'center', md: 'left'}, my: '25px'}}>
+          This is a space where I'd like to share with you some cool/pretty things that I made! <br/>
          Take a look around.</Typography>
-        <Box>
-          <Typography variant="body1">Scroll down to see more stuff</Typography>
-          <motion.div animate={{ y: ["0%", "15%", "0%"] }} transition={bounceAnimation}>
-            <ArrowDownward />
-          </motion.div>
-        </Box>
+         <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: { xs: 'center', md: 'flex-start' },
+              marginLeft: { xs: '20px', md: '0px' },
+              marginBottom: '30px',
+            }}
+          >
+            <Typography variant="body1">Scroll down to see more stuff</Typography>
+            <motion.div animate={{ y: ['0%', '15%', '0%'] }} transition={bounceAnimation}>
+              <ArrowDownward />
+            </motion.div>
+          </Box>
       </FadeInBox>
     </Container>
   )

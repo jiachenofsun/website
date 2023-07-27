@@ -1,9 +1,9 @@
-import {createTheme} from '@mui/material/styles'
+import {createTheme, responsiveFontSizes} from '@mui/material/styles'
 import {AppBar, Button, Paper} from '@mui/material'
 import {styled, keyframes} from '@mui/system'
 
 
-const baseTheme = {
+let baseTheme = {
   typography: {
     allVariants: {
       color: 'inherit',
@@ -21,7 +21,7 @@ const baseTheme = {
   },
 }
 
-export const theme = createTheme({
+export const theme = responsiveFontSizes(createTheme({
   ...baseTheme,
   palette: {
     primary: {
@@ -31,9 +31,9 @@ export const theme = createTheme({
       main: '#000000',
     },
   },
-})
+}))
 
-export const darkTheme = createTheme({
+export const darkTheme = responsiveFontSizes(createTheme({
   ...baseTheme,
   palette: {
     mode: 'dark',
@@ -47,7 +47,7 @@ export const darkTheme = createTheme({
       default: '#000000',
     },
   },
-})
+}))
 
 export const StyledAppBar = styled(AppBar)(() => ({
   borderBottom: `1px solid ${theme.palette.primary.dark}`,
