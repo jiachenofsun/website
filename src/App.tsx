@@ -1,5 +1,6 @@
 import React from 'react'
-import {AppContainer, theme} from './theme'
+import {theme} from './theme'
+import {Container} from '@mui/material'
 import {ThemeProvider} from '@mui/material/styles'
 import {RouterProvider, createBrowserRouter} from 'react-router-dom'
 import {ErrorPage} from './pages'
@@ -24,9 +25,9 @@ function App() {
   return (
 
     <ThemeProvider theme={theme}>
-    <AppContainer>
+    <Container>
     <RouterProvider router={routes} />
-    </AppContainer>
+    </Container>
     </ThemeProvider>
   )
 }

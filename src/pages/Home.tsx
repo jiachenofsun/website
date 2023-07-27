@@ -4,6 +4,15 @@ export const Home = (): JSX.Element => {
   return (
     <Box>
       <Typography variant='h1'>Home</Typography>
+      <Typography variant='h1'>Home</Typography>
+      <Typography variant='h1'>Home</Typography>
+      <Typography variant='h1'>Home</Typography>
+      <Typography variant='h1'>Home</Typography>
+      <Typography variant='h1'>Home</Typography>
+      <Typography variant='h1'>Home</Typography>
+      <Typography variant='h1'>Home</Typography>
+      <Typography variant='h1'>Home</Typography>
+      <Typography variant='h1'>Home</Typography>
     </Box>
   )
 }

@@ -1,19 +1,28 @@
 import {createTheme} from '@mui/material/styles'
-import {Container} from '@mui/material'
+import {AppBar} from '@mui/material'
 import styled from '@emotion/styled'
 
 export const theme = createTheme({
   palette: {
     primary: {
-      main: '#1976d2',
+      main: '#ffffff',
     },
     secondary: {
-      main: '#dc004e',
+      main: '#000000',
+    },
+  },
+  components: {
+    MuiContainer: {
+      styleOverrides: {
+        root: {
+          maxWidth: 'none !important',
+          margin: '0px',
+        },
+      },
     },
   },
 })
 
-export const AppContainer = styled(Container)(() => ({
-  margin: '0px',
-  maxWidth: 'none'
+export const StyledAppBar = styled(AppBar)(() => ({
+  borderBottom: `1px solid ${theme.palette.primary.dark}`,
 }))

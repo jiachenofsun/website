@@ -1,5 +1,5 @@
 import {ComponentType} from 'react'
-import {Home, About} from './pages'
+import {Home, About, Photos, Doodles, TechyStuff} from './pages'
 
 export interface PageRoute {
   title: string
@@ -9,5 +9,8 @@ export interface PageRoute {
 
 export const pageRoutes: PageRoute[] = [
   {title: 'Home', path: '/', element: Home},
-  {title: 'Orders', path: '/about', element: About},
+  {title: 'Photos', path: '/photos', element: Photos},
+  {title: 'Doodles', path: '/doodles', element: Doodles},
+  {title: 'Techy Stuff', path: '/techy-stuff', element: TechyStuff},
+  {title: 'About', path: '/about', element: About},
 ]
