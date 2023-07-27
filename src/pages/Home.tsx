@@ -26,11 +26,9 @@ export const Home = (): JSX.Element => {
 
   const FadeInBox = motion(Box)
 
-  //TODO: MAKE RESPONSIVE
   return (
     <>
-    <TranslucentBanner
-      bgUrl={`${process.env.PUBLIC_URL}/media/welcome-banner.jpg`} 
+    <TranslucentBanner bgUrl={`${process.env.PUBLIC_URL}/media/welcome-banner.jpg`} 
       sx={{
         flexDirection: { xs: 'column', md: 'row' },
         alignItems: 'center',
@@ -52,7 +50,7 @@ export const Home = (): JSX.Element => {
       <FadeInBox 
         initial={{ opacity: 0, x: '-3%' }} 
         animate={{ opacity: 1, x: '0%' }} 
-        transition={{ delay: 2.5, duration: 2 }}
+        transition={{ delay: 2, duration: 2 }}
         sx={{maxWidth: '800px', marginLeft: {xs: '0px', md: '200px'}}}>
         <Typography variant="h4" sx={{textAlign: {xs: 'center', md: 'left'}, my: '25px'}}>
           This is a space where I'd like to share with you some cool/pretty things that I made! <br/>
@@ -73,8 +71,7 @@ export const Home = (): JSX.Element => {
           </Box>
       </FadeInBox>
     </TranslucentBanner>
-    <TranslucentBanner
-      bgUrl={`${process.env.PUBLIC_URL}/media/tiggy.jpg`} 
+    <TranslucentBanner bgUrl={`${process.env.PUBLIC_URL}/media/tiggy.jpg`} 
       sx={{
         alignItems: 'center',
         justifyContent: 'center',

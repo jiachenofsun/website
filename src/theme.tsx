@@ -1,5 +1,5 @@
 import {createTheme, responsiveFontSizes} from '@mui/material/styles'
-import {AppBar, Button, Paper, Container, ContainerProps} from '@mui/material'
+import {AppBar, Button, Box, Paper, Container, ContainerProps} from '@mui/material'
 import {styled, keyframes} from '@mui/system'
 
 let baseTheme = {
@@ -246,4 +246,12 @@ export const TranslucentBanner = styled(Container)<StyledContainerProps>(({bgUrl
     position: 'relative',
     zIndex: 1,
   },
+}))
+
+
+export const ImageGrid = styled(Box)(({theme}) => ({
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fit, minmax(500px, 1fr))",
+  gridAutoRows: "1fr",
+  gridGap: theme.spacing(1),
 }))
