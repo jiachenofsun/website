@@ -1,23 +1,25 @@
 import * as React from 'react'
-import {Box, Toolbar, IconButton, Typography, Menu, MenuItem, Container, Button} from '@mui/material'
+import {Box, Toolbar, IconButton, Typography, Menu, MenuItem, Container, Link} from '@mui/material'
 import {Menu as MenuIcon} from '@mui/icons-material'
-import {StyledAppBar, theme} from '../theme'
+import {StyledAppBar, ShakyButton} from '../theme'
 import {pageRoutes} from '../page-routes'
+import {useNavigate} from 'react-router-dom'
 
 const pageRoutesFiltered = pageRoutes.filter((pageRoute) => {
   return pageRoute.title !== 'Home'
 })
 
 export const NavMenu = (): JSX.Element => {
+  const navigate = useNavigate()
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null)
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget)
-  };
+  }
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null)
-  };
+  }
 
   return (
     <StyledAppBar position="fixed" elevation={0}>
@@ -26,7 +28,7 @@ export const NavMenu = (): JSX.Element => {
           <Typography
             variant="h6"
             noWrap
-            component="a"
+            component={Link}
             href="/"
             sx={{
               display: { xs: 'none', md: 'inline' },
@@ -71,7 +73,7 @@ export const NavMenu = (): JSX.Element => {
             >
               {pageRoutesFiltered.map((pageRoute) => (
                 <MenuItem key={pageRoute.title} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{pageRoute.title}</Typography>
+                  <Typography textAlign="center" component="a" href={pageRoute.path}>{pageRoute.title}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -81,8 +83,8 @@ export const NavMenu = (): JSX.Element => {
           <Typography
             variant="h5"
             noWrap
-            component="a"
-            href=""
+            component={Link}
+            href="/"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -99,17 +101,17 @@ export const NavMenu = (): JSX.Element => {
           
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center'}}>
             {pageRoutesFiltered.map((pageRoute) => (
-              <Button
+              <ShakyButton
                 key={pageRoute.title}
-                onClick={handleCloseNavMenu}
+                onClick={() => navigate(pageRoute.path)}
                 sx={{
                   display: 'block',
                   py: 0,
                   mx: 1,
-                  color: theme.palette.secondary.main}}
+                  color: 'inherit'}}
               >
                 {pageRoute.title}
-              </Button>
+              </ShakyButton>
             ))}
           </Box>
         </Toolbar>

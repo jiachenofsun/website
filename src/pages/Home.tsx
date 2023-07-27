@@ -1,8 +1,8 @@
-import {Box, Typography} from '@mui/material'
+import {Typography, Container} from '@mui/material'
 
 export const Home = (): JSX.Element => {
   return (
-    <Box>
+    <Container>
       <Typography variant='h1'>Home</Typography>
       <Typography variant='h1'>Home</Typography>
       <Typography variant='h1'>Home</Typography>
@@ -13,6 +13,6 @@ export const Home = (): JSX.Element => {
       <Typography variant='h1'>Home</Typography>
       <Typography variant='h1'>Home</Typography>
       <Typography variant='h1'>Home</Typography>
-    </Box>
+    </Container>
   )
 }
