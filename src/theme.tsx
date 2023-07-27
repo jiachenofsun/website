@@ -1,7 +1,6 @@
 import {createTheme, responsiveFontSizes} from '@mui/material/styles'
-import {AppBar, Button, Paper} from '@mui/material'
+import {AppBar, Button, Paper, Container, ContainerProps} from '@mui/material'
 import {styled, keyframes} from '@mui/system'
-
 
 let baseTheme = {
   typography: {
@@ -207,6 +206,7 @@ const shakeAnimation = keyframes`
 `;
 
 export const ShakyButton = styled(Button)(() => ({
+  color: 'inherit',
   '&:hover': {
     animationDuration: '2.5s',
     animationIterationCount: 'infinite',
@@ -219,4 +219,31 @@ export const AppContainer = styled(Paper)(() => ({
   backgroundImage: 'none',
   maxWidth: 'none !important',
   margin: '0px',
+}))
+
+interface StyledContainerProps extends ContainerProps {
+  bgUrl: string;
+}
+
+export const TranslucentBanner = styled(Container)<StyledContainerProps>(({bgUrl}) => ({
+  position: 'relative',
+  display: 'flex',
+  minHeight: '96vh',
+  '&::before': {
+    content: '""',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundImage: `url("${bgUrl}")`,
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    opacity: 0.35,
+  },
+  '& > *': {
+    position: 'relative',
+    zIndex: 1,
+  },
 }))

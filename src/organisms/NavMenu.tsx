@@ -1,10 +1,11 @@
 import * as React from 'react'
 import {Box, Toolbar, IconButton, Typography, Menu, MenuItem, Container} from '@mui/material'
 import {Menu as MenuIcon} from '@mui/icons-material'
-import {StyledAppBar, ShakyButton} from '../theme'
+import {theme, StyledAppBar, ShakyButton} from '../theme'
 import {pageRoutes} from '../page-routes'
 import {useNavigate} from 'react-router-dom'
 import {Link} from 'react-router-dom'
+import {motion} from 'framer-motion'
 
 const pageRoutesFiltered = pageRoutes.filter((pageRoute) => {
   return pageRoute.title !== 'HOME'
@@ -22,9 +23,22 @@ export const NavMenu = (): JSX.Element => {
     setAnchorElNav(null)
   }
 
+  const tickerVariants = {
+    animate: {
+      x: ['-30%', '100%'],
+      transition: {
+        x: {
+          duration: 35,
+          repeat: Infinity,
+          ease: "linear"
+        }
+      }
+    }
+  }
+
   return (
-    <StyledAppBar position="sticky" elevation={0}>
-      <Container>
+    <StyledAppBar position='sticky' elevation={0}>
+      <Container sx={{borderBottom: `1px solid ${theme.palette.primary.dark}`}}>
         <Toolbar disableGutters>
           {/* LARGER SCREEN SIZES */}
           <Typography
@@ -126,6 +140,14 @@ export const NavMenu = (): JSX.Element => {
           </Box>
         </Toolbar>
       </Container>
+      <motion.div
+        variants={tickerVariants}
+        initial="animate"
+        animate="animate"
+      >
+        <Typography variant='body1'>REMEMBER TO STAY HYDRATED. HAVE A WONDERFUL DAY.</Typography>
+      </motion.div>
     </StyledAppBar>
+    
   )
 }

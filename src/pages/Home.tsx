@@ -1,8 +1,12 @@
 import {motion} from 'framer-motion'
-import {Typography, Container, Box} from '@mui/material'
-import {ArrowDownward} from '@mui/icons-material';
+import {Typography, Box} from '@mui/material'
+import {ArrowDownward} from '@mui/icons-material'
+import {TranslucentBanner, ShakyButton} from '../theme'
+import {useNavigate} from 'react-router-dom'
 
 export const Home = (): JSX.Element => {
+  const navigate = useNavigate()
+
   const variants = {
     hidden: { opacity: 0 },
     show: (i: number) => ({
@@ -24,31 +28,13 @@ export const Home = (): JSX.Element => {
 
   //TODO: MAKE RESPONSIVE
   return (
-    <Container 
-    sx={{
-      position: 'relative',
-      display: 'flex',
-      flexDirection: { xs: 'column', md: 'row' },
-      alignItems: 'center',
-      minHeight: '96vh',
-      '&::before': {
-        content: '""',
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        backgroundImage: `url("${process.env.PUBLIC_URL}/media/welcome-banner.jpg")`,
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        opacity: 0.35,
-      },
-      '& > *': {
-        position: 'relative',
-        zIndex: 1,
-      },
-    }}>
+    <>
+    <TranslucentBanner
+      bgUrl={`${process.env.PUBLIC_URL}/media/welcome-banner.jpg`} 
+      sx={{
+        flexDirection: { xs: 'column', md: 'row' },
+        alignItems: 'center',
+      }}>
       <Box>
         {Array.from({ length: 8 }).map((_, i) => (
           <motion.div
@@ -86,7 +72,26 @@ export const Home = (): JSX.Element => {
             </motion.div>
           </Box>
       </FadeInBox>
-    </Container>
+    </TranslucentBanner>
+    <TranslucentBanner
+      bgUrl={`${process.env.PUBLIC_URL}/media/tiggy.jpg`} 
+      sx={{
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}>
+        <ShakyButton 
+          onClick={() => navigate('/photos')}
+          sx={{
+            border: '0.25rem solid',
+            borderRadius: 0,
+            px: '25px',
+            }}>
+          <Typography sx={{fontSize: '4rem', fontWeight: 'light'}}>
+            Photos
+          </Typography>
+        </ShakyButton>
+    </TranslucentBanner>
+    </>
   )
 }
 
