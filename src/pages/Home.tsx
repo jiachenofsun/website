@@ -64,7 +64,7 @@ export const Home = (): JSX.Element => {
         animate={{ opacity: 1, x: '0%' }} 
         transition={{ delay: 2.5, duration: 2 }}
         sx={{maxWidth: '800px', marginLeft: '200px'}}>
-        <Typography variant="h4">This is a space where I'd like share some cool/pretty things I made with you! <br/>
+        <Typography variant="h4">This is a space where I'd like to share some cool/pretty things I made with you! <br/>
          Take a look around.</Typography>
         <Box>
           <Typography variant="body1">Scroll down to see more stuff</Typography>
