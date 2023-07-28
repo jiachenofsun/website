@@ -1,9 +1,11 @@
-import {Box, Typography} from '@mui/material'
+import {Typography} from '@mui/material'
+import {PageContainer} from '../theme'
 
 export const TechyStuff = (): JSX.Element => {
   return (
-    <Box>
-      <Typography variant='h1'>Techy Stuff</Typography>
-    </Box>
+    <PageContainer>
+      <Typography variant='h1'>TECHY STUFF</Typography>
+      <Typography variant='body1'>ITS NOT READY YET</Typography>
+    </PageContainer>
   )
 }

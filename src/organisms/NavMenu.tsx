@@ -25,10 +25,10 @@ export const NavMenu = (): JSX.Element => {
 
   const tickerVariants = {
     animate: {
-      x: ['-30%', '100%'],
+      x: ['100%', '-100%'],
       transition: {
         x: {
-          duration: 35,
+          duration: 25,
           repeat: Infinity,
           ease: "linear"
         }
@@ -145,7 +145,7 @@ export const NavMenu = (): JSX.Element => {
         initial="animate"
         animate="animate"
       >
-        <Typography variant='body1'>REMEMBER TO STAY HYDRATED. HAVE A WONDERFUL DAY.</Typography>
+        <Typography variant='body1' sx={{display: 'inline', fontSize: { xs: '0.7rem', md: '1rem' }}}>REMEMBER TO STAY HYDRATED. HAVE A WONDERFUL DAY.</Typography>
       </motion.div>
     </StyledAppBar>
     

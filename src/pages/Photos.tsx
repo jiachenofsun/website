@@ -1,21 +1,18 @@
 import {Typography} from '@mui/material'
-import {ImageGrid} from '../theme'
-import {photoUrls} from '../utils/photo-urls'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
+import {images} from '../utils/photo-urls'
+import {Gallery} from 'react-grid-gallery'
+import {PageContainer} from '../theme'
 
 export const Photos = (): JSX.Element => {
   return (
-    <>
-    <Typography variant='h1'>Photos</Typography>
-    <ImageGrid>
-      {photoUrls.map((src, index) => (
-        <LazyLoadImage
-          key={index}
-          height='100%'
-          width='100%'
-          src={src} />
-      ))}
-    </ImageGrid>
-    </>
+    <PageContainer>
+    <Typography variant='h1'>PHOTOS</Typography>
+    <Gallery 
+      images={images}
+      enableImageSelection={false}
+      rowHeight={570}
+      margin={4}
+       />
+    </PageContainer>
   )
 }

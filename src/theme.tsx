@@ -1,5 +1,5 @@
 import {createTheme, responsiveFontSizes} from '@mui/material/styles'
-import {AppBar, Button, Box, Paper, Container, ContainerProps} from '@mui/material'
+import {AppBar, Box, Button, Paper, Container, ContainerProps} from '@mui/material'
 import {styled, keyframes} from '@mui/system'
 
 let baseTheme = {
@@ -46,6 +46,20 @@ export const darkTheme = responsiveFontSizes(createTheme({
       default: '#000000',
     },
   },
+}))
+
+
+export const AppContainer = styled(Paper)(() => ({
+  backgroundImage: 'none',
+  maxWidth: 'none !important',
+  margin: '0px',
+  overflowX: 'hidden',
+}))
+
+export const PageContainer = styled(Box)(() => ({
+  margin: '0',
+  padding: '0',
+  minHeight: '96vh',
 }))
 
 export const StyledAppBar = styled(AppBar)(() => ({
@@ -215,11 +229,6 @@ export const ShakyButton = styled(Button)(() => ({
   },
 }))
 
-export const AppContainer = styled(Paper)(() => ({
-  backgroundImage: 'none',
-  maxWidth: 'none !important',
-  margin: '0px',
-}))
 
 interface StyledContainerProps extends ContainerProps {
   bgUrl: string;
@@ -246,12 +255,4 @@ export const TranslucentBanner = styled(Container)<StyledContainerProps>(({bgUrl
     position: 'relative',
     zIndex: 1,
   },
-}))
-
-
-export const ImageGrid = styled(Box)(({theme}) => ({
-  display: "grid",
-  gridTemplateColumns: "repeat(auto-fit, minmax(500px, 1fr))",
-  gridAutoRows: "1fr",
-  gridGap: theme.spacing(1),
 }))

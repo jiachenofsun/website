@@ -1,9 +1,10 @@
-import {Box, Typography} from '@mui/material'
+import {Typography} from '@mui/material'
+import {PageContainer} from '../theme'
 
 export const ErrorPage = (): JSX.Element => {
   return (
-    <Box>
+    <PageContainer>
       <Typography variant='h1'>Something went wrong</Typography>
-    </Box>
+    </PageContainer>
   )
 }

@@ -1,7 +1,7 @@
 import {motion} from 'framer-motion'
 import {Typography, Box} from '@mui/material'
 import {ArrowDownward} from '@mui/icons-material'
-import {TranslucentBanner, ShakyButton} from '../theme'
+import {TranslucentBanner, ShakyButton, PageContainer} from '../theme'
 import {useNavigate} from 'react-router-dom'
 
 export const Home = (): JSX.Element => {
@@ -27,7 +27,7 @@ export const Home = (): JSX.Element => {
   const FadeInBox = motion(Box)
 
   return (
-    <>
+    <PageContainer>
     <TranslucentBanner bgUrl={`${process.env.PUBLIC_URL}/media/welcome-banner.jpg`} 
       sx={{
         flexDirection: { xs: 'column', md: 'row' },
@@ -88,7 +88,7 @@ export const Home = (): JSX.Element => {
           </Typography>
         </ShakyButton>
     </TranslucentBanner>
-    </>
+    </PageContainer>
   )
 }
 
