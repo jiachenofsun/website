@@ -1,6 +1,7 @@
 import {createTheme, responsiveFontSizes} from '@mui/material/styles'
 import {AppBar, Box, Button, Paper, Container, ContainerProps} from '@mui/material'
 import {styled, keyframes} from '@mui/system'
+import {motion} from 'framer-motion'
 
 let baseTheme = {
   typography: {
@@ -61,6 +62,8 @@ export const PageContainer = styled(Box)(() => ({
   padding: '0',
   minHeight: '96vh',
 }))
+
+export const MotionBox = motion(Box)
 
 export const StyledAppBar = styled(AppBar)(() => ({
   borderBottom: `1px solid ${theme.palette.primary.dark}`,

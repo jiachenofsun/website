@@ -40,7 +40,6 @@ function App() {
     <AppContainer>
     <RouterProvider router={routes} />
     <Footer darkMode={darkMode} setDarkMode={setDarkMode}/>
-    {/* Move into Footer: <Switch color="default" checked={darkMode} onChange={() => setDarkMode(!darkMode)} /> */}
     </AppContainer>
     </ThemeProvider>
   )
