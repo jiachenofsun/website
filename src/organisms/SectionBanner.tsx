@@ -24,7 +24,7 @@ export const SectionBanner = ({bgUrl, path, text}: SectionBannerProps): JSX.Elem
       >
         <Controller>
           <Scene
-            duration={800}
+            duration={600}
             triggerHook="onEnter"
           >
             <Timeline target={<BannerButton path={path}/>}>
