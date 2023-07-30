@@ -119,6 +119,15 @@ export const VHSBanner = (): JSX.Element => {
             alignItems: 'center',
             justifyContent: 'center',
             zIndex: 9997,
+            animation: 'wobbley 150ms infinite',
+            '@keyframes wobbley': {
+              '0%': {
+                transform: 'translateY(1px)',
+              },
+              '100%': {
+                transform: 'translateY(0)',
+              },
+            },
           }}>
           <Typography variant="h1" sx={{
             fontFamily: 'VT323', 
