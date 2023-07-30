@@ -9371,6 +9371,11 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
+typeface-vt323@^1.1.13:
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/typeface-vt323/-/typeface-vt323-1.1.13.tgz#a181aad2acd86d251908d4b9cbe95f8dddcccd1e"
+  integrity sha512-qDLRQrG5/N19pQGuVv0iXhvLNIsBCBY743pl9Ws6hc5bP+UM8C/jXBtOashvFgZATQkTdCO0G6E/zFJMMM3dwA==
+
 typescript@^4.9.5:
   version "4.9.5"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.9.5.tgz#095979f9bcc0d09da324d58d03ce8f8374cbe65a"
