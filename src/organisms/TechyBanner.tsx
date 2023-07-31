@@ -96,7 +96,7 @@ export const TechyBanner = (): JSX.Element => {
             backgroundPosition: 'center',
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
-            opacity: 0.35,
+            opacity: 0.2,
           },
           '& > *': {
             position: 'relative',
