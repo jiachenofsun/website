@@ -26,12 +26,12 @@ export const BannerButton = forwardRef(({path}: BannerButtonProps, ref) => {
             px: '25px',
         }}
         >
-        <Typography ref={typo} sx={{ fontSize: '4rem', fontWeight: 'light' }}>
+        <Typography ref={typo} sx={{ fontSize: {xs: '3rem !important', md: '4rem !important'}, fontWeight: 'light' }}>
         </Typography>
         <motion.span
             animate={{ opacity: [1, 0, 1] }}
             transition={{ duration: 1, repeat: Infinity, repeatType: "loop" }}>
-            <Typography sx={{ fontSize: '4rem', fontWeight: 'light' }}>_</Typography>
+            <Typography sx={{ fontSize: {xs: '3rem !important', md: '4rem !important'}, fontWeight: 'light' }}>_</Typography>
         </motion.span>
     </ShakyButton>
     )

@@ -1,7 +1,7 @@
 import {Box, Container, Typography} from '@mui/material'
 import {useEffect, useRef} from 'react'
 import {ArrowDownward} from '@mui/icons-material'
-import {MotionBox} from '../theme'
+import {MotionBox, fill} from '../theme'
 import 'typeface-vt323'
 
 export const VHSBanner = (): JSX.Element => {
@@ -23,8 +23,16 @@ export const VHSBanner = (): JSX.Element => {
   }
 
   useEffect(() => {
+    const updateSize = () => {
+      if (!canvasRef.current || !boxRef.current) return
+      
+      const box = boxRef.current.getBoundingClientRect()
+      canvasRef.current.width = box.width
+      canvasRef.current.height = box.height
+    }
+  
     if (!boxRef.current) return
-
+  
     if (!canvasRef.current) {
       const box = boxRef.current.getBoundingClientRect()
       const canvas = document.createElement('canvas')
@@ -33,14 +41,16 @@ export const VHSBanner = (): JSX.Element => {
       if (!ctx) return
       canvas.width = box.width
       canvas.height = box.height
-
+  
       canvas.style.backgroundColor = '#aaa'
       canvas.style.opacity = '0.2'
       
       boxRef.current.appendChild(canvas)
       canvasRef.current = canvas
     }
-    
+  
+    window.addEventListener('resize', updateSize)
+  
     const ctx = canvasRef.current.getContext('2d')
     if (!ctx) return
     
@@ -50,17 +60,13 @@ export const VHSBanner = (): JSX.Element => {
         requestAnimationFrame(animate)
       }, 350)
     }
-
+  
     animate()
+  
+    return () => {
+      window.removeEventListener('resize', updateSize)
+    };
   }, [])
-
-  const fill = {
-    width: '100%',
-    height: '100%',
-    position: 'absolute',
-    left: 0,
-    top: 0,
-  }
 
   const bounceAnimation = {
     repeat: Infinity,
@@ -87,10 +93,6 @@ export const VHSBanner = (): JSX.Element => {
           sx={{
             ...fill,
             backgroundColor: 'transparent',
-            '&.snow': {
-              backgroundColor: '#aaa',
-              opacity: 0.2,
-            },
             zIndex: 9999,
           }} />
         {/* SCANLINES */}
@@ -122,7 +124,7 @@ export const VHSBanner = (): JSX.Element => {
             animation: 'wobbley 150ms infinite',
             '@keyframes wobbley': {
               '0%': {
-                transform: 'translateY(1px)',
+                transform: 'translateY(0.4px)',
               },
               '100%': {
                 transform: 'translateY(0)',

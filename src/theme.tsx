@@ -2,13 +2,40 @@ import {createTheme, responsiveFontSizes} from '@mui/material/styles'
 import {AppBar, Box, Button, Paper, Container, ContainerProps} from '@mui/material'
 import {styled, keyframes} from '@mui/system'
 import {motion} from 'framer-motion'
+import 'typeface-cutive-mono'
 
 let baseTheme = {
-  typography: {
-    allVariants: {
-      color: 'inherit',
+    typography: {
+      allVariants: {
+        color: 'inherit',
+        fontFamily: 'Cutive Mono, monospace',
+      },
+      h1: {
+        fontSize: '4rem',
+        letterSpacing: '.1rem',
+      },
+      h2: {
+        fontSize: '3.555rem',
+      },
+      h3: {
+        fontSize: '3.16rem',
+      },
+      h4: {
+        fontSize: '2.81rem',
+      },
+      h5: {
+        fontSize: '2.5rem',
+      },
+      h6: {
+        fontSize: '2.22rem',
+      },
+      body1: {
+        fontSize: '1.57rem',
+      },
+      body2: {
+        fontSize: '1.4rem',
+      },
     },
-  },
   components: {
     MuiContainer: {
       styleOverrides: {
@@ -49,6 +76,13 @@ export const darkTheme = responsiveFontSizes(createTheme({
   },
 }))
 
+export const fill = {
+  width: '100%',
+  height: '100%',
+  position: 'absolute',
+  left: 0,
+  top: 0,
+}
 
 export const AppContainer = styled(Paper)(() => ({
   backgroundImage: 'none',

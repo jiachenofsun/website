@@ -41,15 +41,13 @@ export const NavMenu = (): JSX.Element => {
         <Toolbar disableGutters>
           {/* LARGER SCREEN SIZES */}
           <Typography
-            variant="h6"
             noWrap
             component={Link}
             to=""
             sx={{
               display: { xs: 'none', md: 'inline' },
               position: 'absolute',
-              fontFamily: 'monospace',
-              fontWeight: 100,
+              fontSize: '0.5rem',
               letterSpacing: '.1rem',
               color: 'inherit',
               textDecoration: 'none',
@@ -131,7 +129,9 @@ export const NavMenu = (): JSX.Element => {
                   display: 'block',
                   py: 0,
                   mx: 1,
-                  color: 'inherit'}}
+                  color: 'inherit',
+                  fontSize: '1.1rem',
+                }}
               >
                 {pageRoute.title}
               </ShakyButton>
