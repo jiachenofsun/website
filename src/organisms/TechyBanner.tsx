@@ -105,7 +105,7 @@ export const TechyBanner = (): JSX.Element => {
         }}>
         <Controller>
           <Scene
-            duration={600}
+            duration={450}
             triggerHook="onEnter"
           >
             <Timeline target={<BannerButton path={'/techy-stuff'}/>}>

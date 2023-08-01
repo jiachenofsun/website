@@ -1,5 +1,6 @@
 import {Typography, List, ListItem, Link} from '@mui/material'
 import {PageContainer} from '../theme'
+import {SoundButton} from '../molecules/SoundButton'
 
 export const About = (): JSX.Element => {
   return (
@@ -39,6 +40,7 @@ export const About = (): JSX.Element => {
           </Link>
         </ListItem>
       </List>
+      <SoundButton />
     </PageContainer>
   )
 }
