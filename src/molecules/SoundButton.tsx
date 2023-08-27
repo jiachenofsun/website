@@ -15,6 +15,7 @@ export const SoundButton = (): JSX.Element => {
     rel="noopener noreferrer"
     underline="none"
     color="inherit"
+    sx={{display: 'inline-block'}}
   >
   <ShakyButton
     sx={{

@@ -9,11 +9,21 @@ export const Home = (): JSX.Element => {
     <PageContainer>
       <VHSBanner />
       <SectionBanner 
-        bgUrl={`${process.env.PUBLIC_URL}/media/tiggy.jpg`} 
+        bgUrl={`${process.env.PUBLIC_URL}/media/photos-banner.jpg`} 
         path='/photos' 
         text="PHOTOS" 
       />
+      <SectionBanner 
+        bgUrl={`${process.env.PUBLIC_URL}/media/doodles-banner.jpg`} 
+        path='/doodles' 
+        text="DOODLES" 
+      />
       <TechyBanner />
+      <SectionBanner 
+        bgUrl={`${process.env.PUBLIC_URL}/media/about-banner.jpg`} 
+        path='/about' 
+        text="ABOUT" 
+      />
     </PageContainer>
   )
 }
